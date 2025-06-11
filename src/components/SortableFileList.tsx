@@ -45,7 +45,6 @@ export const SortableFileList: React.FC<SortableFileListProps> = ({
     })
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragStart = (event: any) => {
     setActiveId(event.active.id);
   };

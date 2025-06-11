@@ -7,7 +7,6 @@ import React, {
 } from "react";
 
 export const Input = React.forwardRef(function Input(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   { label, type = "text", className = "", isRequired = false, ...props }: any,
   ref,
 ) {
@@ -34,7 +33,6 @@ export const Input = React.forwardRef(function Input(
 });
 
 export const TextArea = React.forwardRef(function Input(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   { label, type = "text", className = "", rows, ...props }: any,
   ref,
 ) {

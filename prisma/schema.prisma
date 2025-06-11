@@ -1,0 +1,27 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["driverAdapters"]
+  binaryTargets   = ["native", "rhel-openssl-3.0.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model File {
+  id          String   @id @default(cuid())
+  fileUrl     String
+  title       String
+  slug        String   @unique
+  description String?
+  order       Int      @default(0)
+  fileName    String
+  fileSize    Int
+  mimeType    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("files")
+}

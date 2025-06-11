@@ -1,0 +1,110 @@
+# File Upload System - ChatGPT Training Prompt
+
+You are an expert full-stack developer specializing in modern web applications. I need you to help me build a comprehensive file upload system with the following specifications:
+
+## Project Overview
+Build a production-ready file upload system with drag-and-drop functionality, progress tracking, and file management capabilities.
+
+## Tech Stack
+
+### Frontend
+- Next.js 15 with TypeScript and App Router
+- @dnd-kit/core, @dnd-kit/modifiers, @dnd-kit/sortable (for drag & drop)
+- axios (HTTP client)
+- react-dropzone (file drop zone)
+- zod (schema validation)
+- react-hook-form (form management)
+- react-toast (notifications)
+- clsx (utility classes)
+- @t3-oss/env-nextjs (environment variables)
+
+### Backend
+- Next.js API routes
+- Prisma ORM
+- @vercel/blob (file storage)
+- Vercel Neon Database (PostgreSQL)
+
+### Deployment
+- Vercel platform
+
+## Database Schema
+Create a file model with these fields:
+- `fileUrl` (string) - URL to the uploaded file
+- `title` (string) - Display name for the file
+- `slug` (string) - URL-friendly identifier
+- `description` (string) - File description
+- `order` (integer) - Sort order for file arrangement
+
+## Business Rules & Requirements
+1. **File Limit**: Maximum 5 files allowed per user/session
+2. **Upload Progress**: Real-time progress bar with percentage display
+3. **Drag & Drop**: Sortable file list with @dnd-kit
+4. **Validation**: Client and server-side validation using Zod
+5. **Error Handling**: Comprehensive error states and user feedback
+6. **Industry Standards**: Follow production best practices
+
+## Key Features to Implement
+- File drag-and-drop upload zone
+- Real-time upload progress tracking
+- File preview thumbnails (when applicable)
+- Sortable file list with drag-and-drop reordering
+- Form validation for file metadata
+- Toast notifications for success/error states
+- Loading states and skeleton UI
+- Responsive design
+- Type safety throughout
+
+## Code Quality Requirements
+- Use TypeScript strictly with proper type definitions
+- Implement proper error boundaries
+- Add loading states for all async operations
+- Use proper form validation with react-hook-form + zod
+- Implement optimistic UI updates where appropriate
+- Follow Next.js 15 app router conventions
+- Use server actions where beneficial
+- Implement proper SEO meta tags
+
+## Security & Performance
+- Validate file types and sizes
+- Implement rate limiting
+- Use proper CORS settings
+- Optimize images and file handling
+- Implement proper caching strategies
+- Add proper error logging
+
+## Instructions for Implementation
+1. Start with the database schema and Prisma setup
+2. Create the file upload API endpoints
+3. Build the drag-and-drop upload component
+4. Implement the progress tracking system
+5. Add file management (edit, delete, reorder)
+6. Style with a modern, clean UI
+7. Add comprehensive error handling
+8. Test edge cases and file limits
+
+Please provide production-ready code with proper TypeScript types, error handling, and following modern React patterns. Include detailed comments explaining complex logic and provide step-by-step implementation guidance.
+
+When responding, structure your answer with:
+1. Project setup and configuration
+2. Database schema and API routes
+3. Frontend components and hooks
+4. Integration and testing approach
+5. Deployment considerations
+
+Focus on creating a robust, scalable solution that follows industry best practices and provides excellent user experience.
+
+
+
+<!-- --------------- -->
+# Frontend
+bun install axios react-dropzone react-hook-form zod @hookform/resolvers react-hot-toast clsx
+bun install @dnd-kit/core @dnd-kit/sortable @dnd-kit/modifiers
+bun install clsx prettier prettier-plugin-tailwindcss tailwind-merge tailwindcss-animate react-icons
+
+# Backend + Prisma + Vercel Blob
+bun install prisma @prisma/client @prisma/adapter-neon
+bun install @vercel/blob
+bunx prisma init
+
+# Environment Variables Management
+bun install @t3-oss/env-nextjs
